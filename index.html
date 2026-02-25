@@ -343,7 +343,7 @@
           </p>
         </div>
         <div class="contact-card">
-          <form action="https://formspree.io/f/maqdapgq" method="POST" class="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/maqdapgq" method="POST" class="contact-form">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -356,8 +356,8 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="4" placeholder="Say something..." required></textarea>
             </div>
-            <button type="submit" class="btn primary full-width">
-              Send Message
+            <button type="submit" id="submit-btn" class="btn primary full-width">
+              <span class="btn-text">Send Message</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-send-horizontal">
@@ -366,6 +366,19 @@
               </svg>
             </button>
           </form>
+          <div id="form-success" class="form-success">
+            <div class="success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-circle-2">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3>Thank You for connecting!</h3>
+            <p>Your message has been sent successfully. I'll get back to you soon.</p>
+            <button id="reset-form" class="btn ghost small">Send another message</button>
+          </div>
         </div>
       </div>
     </section>

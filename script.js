@@ -76,5 +76,56 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.transform = `translate(0px, 0px)`;
     });
   });
+
+  // Form Submission Handling
+  const contactForm = document.getElementById("contact-form");
+  const formSuccess = document.getElementById("form-success");
+  const submitBtn = document.getElementById("submit-btn");
+  const resetBtn = document.getElementById("reset-form");
+
+  if (contactForm && formSuccess) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Show loading state
+      if (submitBtn) submitBtn.classList.add("btn-loading");
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.classList.add("hidden");
+          formSuccess.classList.add("active");
+          contactForm.reset();
+        } else {
+          const data = await response.json();
+          if (data && data.errors) {
+            alert(data.errors.map(error => error.message).join(", "));
+          } else {
+            alert("Oops! There was a problem submitting your form");
+          }
+        }
+      } catch (error) {
+        alert("Oops! There was a problem submitting your form");
+      } finally {
+        if (submitBtn) submitBtn.classList.remove("btn-loading");
+      }
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        formSuccess.classList.remove("active");
+        contactForm.classList.remove("hidden");
+      });
+    }
+  }
 });
 
