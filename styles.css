@@ -1,24 +1,22 @@
 :root {
-  --bg: #fff1f2;
-  /* entire app background: ultra soft rose */
-  --bg-card: #ffffff;
-  /* pure white for cards */
-  --bg-soft: #ffe4e6;
-  /* light pink wash */
-  --bg-softer: #fecdd3;
-  /* border rose */
-  --accent: #fb7185;
-  /* soft rose accent */
-  --accent-soft: #fda4af;
-  --accent-strong: #f43f5e;
-  --pink-glow: rgba(251, 113, 133, 0.4);
-  --text: #4c0519;
-  /* deep burgundy rose text */
-  --muted: #881337;
-  /* muted rose gray */
-  --border-subtle: rgba(251, 113, 133, 0.2);
+  --bg: #e6dcff;
+  /* entire app background: light violet */
+  --bg-card: #e6dcff;
+  /* same light violet everywhere */
+  --bg-soft: #e6dcff;
+  /* same light violet */
+  --bg-softer: #e0d5fc;
+  /* barely darker violet for borders/shadows */
+  --accent: #7c3aed;
+  /* violet accent */
+  --accent-soft: #8b5cf6;
+  --accent-strong: #6d28d9;
+  --violet-glow: rgba(124, 58, 237, 0.4);
+  --text: #2e1065;
+  --muted: #5b4b8a;
+  --border-subtle: rgba(124, 58, 237, 0.25);
   --card-radius: 18px;
-  --shadow-soft: 0 18px 40px rgba(76, 5, 25, 0.06);
+  --shadow-soft: 0 18px 40px rgba(124, 58, 237, 0.18);
   --blur: 20px;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
@@ -35,7 +33,7 @@ body::before {
   z-index: 500;
   /* Behind header (1000) but above content */
   background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-      rgba(251, 113, 133, 0.12),
+      rgba(124, 58, 237, 0.12),
       transparent 40%);
   transition: opacity 0.3s ease;
 }
@@ -86,7 +84,7 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(to right, var(--accent), #f0abfc);
+  background: linear-gradient(to right, var(--accent), #c084fc);
   transform-origin: 0 50%;
   transform: scaleX(0);
   z-index: 100;
@@ -103,7 +101,7 @@ body {
   justify-content: space-between;
   padding: 16px 7vw;
   backdrop-filter: blur(12px);
-  background: rgba(255, 241, 242, 0.88);
+  background: rgba(124, 58, 237, 0.18);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -123,7 +121,7 @@ body {
   border-radius: 999px;
   background: black;
   /* light violet */
-  box-shadow: 0 0 15px #f0abfc;
+  box-shadow: 0 0 15px #c084fc;
   animation: logo-pulse 2.5s ease-in-out infinite;
 }
 
@@ -163,7 +161,7 @@ body {
 
 .nav-link:hover {
   color: var(--text);
-  background: rgba(251, 113, 133, 0.08);
+  background: rgba(124, 58, 237, 0.08);
   transform: translateY(-1px);
 }
 
@@ -286,8 +284,8 @@ main {
   background: linear-gradient(125deg, var(--accent-strong), var(--accent-soft));
   color: #fff !important;
   border-color: rgba(251, 113, 133, 0.6);
-  box-shadow: 0 10px 26px rgba(251, 113, 133, 0.25),
-    0 0 0 1px rgba(251, 113, 133, 0.1);
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.25),
+    0 0 0 1px rgba(124, 58, 237, 0.1);
 }
 
 .btn.primary svg {
@@ -296,8 +294,8 @@ main {
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(251, 113, 133, 0.35),
-    0 0 0 1px rgba(251, 113, 133, 0.4);
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.35),
+    0 0 0 1px rgba(124, 58, 237, 0.4);
 }
 
 .btn.primary:active {
@@ -306,14 +304,14 @@ main {
 }
 
 .btn.ghost {
-  background: rgba(251, 113, 133, 0.06);
+  background: rgba(124, 58, 237, 0.06);
   color: var(--text);
-  border-color: rgba(251, 113, 133, 0.25);
+  border-color: rgba(124, 58, 237, 0.25);
 }
 
 .btn.ghost:hover {
-  background: rgba(251, 113, 133, 0.12);
-  border-color: rgba(251, 113, 133, 0.4);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 /* Background Blobs for Atmosphere */
@@ -324,7 +322,7 @@ main {
   right: -10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(251, 113, 133, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
   border-radius: 50%;
   filter: blur(40px);
   animation: float-blob 8s ease-in-out infinite;
@@ -398,7 +396,7 @@ main {
   border-radius: var(--card-radius);
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 18px 40px rgba(30, 27, 75, 0.06);
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.08);
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(24px);
@@ -446,8 +444,8 @@ main {
 
 .pill {
   border-radius: 999px;
-  border: 1px solid rgba(251, 113, 133, 0.2);
-  background: rgba(251, 113, 133, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  background: rgba(124, 58, 237, 0.06);
   padding: 8px 14px;
   font-size: 13px;
   letter-spacing: 0.06em;
@@ -504,8 +502,8 @@ main {
   letter-spacing: 0.04em;
   color: var(--text);
   background: var(--bg-card);
-  border: 1px solid rgba(251, 113, 133, 0.2);
-  box-shadow: 0 2px 10px rgba(76, 5, 25, 0.04);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.05);
   position: relative;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -514,8 +512,8 @@ main {
 
 .skill-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(251, 113, 133, 0.15);
-  border-color: rgba(251, 113, 133, 0.35);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.35);
 }
 
 .skill-logo {
@@ -622,7 +620,7 @@ main {
   border-radius: 18px;
   border: 1px solid var(--border-subtle);
   background: var(--bg-card);
-  box-shadow: 0 12px 28px rgba(76, 5, 25, 0.04);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.05);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
@@ -661,8 +659,8 @@ main {
 
 .project-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(251, 113, 133, 0.2);
-  border-color: rgba(251, 113, 133, 0.5);
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.5);
 }
 
 .project-meta h3 {
@@ -749,14 +747,14 @@ main {
   border-radius: 12px;
   color: var(--accent);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(76, 5, 25, 0.04);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.05);
 }
 
 .social-icon:hover {
   background: var(--accent);
   color: #fff;
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(251, 113, 133, 0.2);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.15);
 }
 
 .contact-desc {
@@ -767,11 +765,11 @@ main {
 }
 
 .contact-card {
-  background: rgba(251, 113, 133, 0.04);
+  background: rgba(124, 58, 237, 0.03);
   padding: 32px;
   border-radius: 20px;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 10px 30px rgba(76, 5, 25, 0.08);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
 }
 
 .contact-form {
@@ -808,7 +806,7 @@ main {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.1);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
   background: #fff;
 }
 
@@ -826,7 +824,7 @@ main {
 }
 
 .link:hover {
-  color: #be123c;
+  color: #5b21b6;
 }
 
 .link::after {
@@ -907,7 +905,7 @@ main {
   border-radius: var(--card-radius);
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 18px 40px rgba(76, 5, 25, 0.08);
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.08);
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(40px) scale(0.98);
@@ -924,12 +922,12 @@ main {
 
   0%,
   100% {
-    box-shadow: 0 0 20px var(--pink-glow);
+    box-shadow: 0 0 20px var(--violet-glow);
     opacity: 1;
   }
 
   50% {
-    box-shadow: 0 0 28px var(--pink-glow), 0 0 40px rgba(251, 113, 133, 0.2);
+    box-shadow: 0 0 28px var(--violet-glow), 0 0 40px rgba(124, 58, 237, 0.15);
     opacity: 0.95;
   }
 }
